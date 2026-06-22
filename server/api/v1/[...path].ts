@@ -1,23 +1,16 @@
-const WALLHAVEN_API_BASE = "https://wallhaven.cc/api/v1";
+import { defineHandler } from "nitro";
+
+const WALLHAVEN_API_BASE = "https://wallhaven.cc";
 
 export default defineHandler(async (event) => {
-  const { path } = event.context.params;
-  const wallhavenPath = path
-    ? `/${Array.isArray(path) ? path.join("/") : path}`
-    : "";
-  const url = `${WALLHAVEN_API_BASE}${wallhavenPath}${event.url.search}`;
-
+  const apiKey = event.context.params?.apiKey || event.req.headers.get("x-api-key");
+  const url = `${WALLHAVEN_API_BASE}${event.url.pathname}${event.url.search}`;
   const headers: Record<string, string> = {};
 
-  const clientKey = event.request.headers.get("x-api-key");
-  if (clientKey) {
-    headers["X-API-Key"] = clientKey;
+  if (apiKey) {
+    headers["X-API-Key"] = apiKey;
   }
-
   const response = await fetch(url, { headers });
-  return new Response(response.body, {
-    status: response.status,
-    statusText: response.statusText,
-    headers: response.headers,
-  });
+  return await response.json();
+
 });

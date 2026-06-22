@@ -1,33 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/nitro.svg" />
-    <title>Nitro + Vite</title>
-    <style>
-      @import "~/app/assets/main.css";
-    </style>
-  </head>
-  <body>
-    <main>
-      <div>
-        <div>
-          <a href="https://nitro.build/" target="_blank">
-            <img
-              src="/app/assets/nitro.svg"
-              class="logo nitro"
-              alt="Nitro logo"
-            />
-          </a>
-          <a href="https://vite.dev" target="_blank">
-            <img src="/app/assets/vite.svg" class="logo" alt="Vite logo" />
-          </a>
-          <h1>Nitro + Vite</h1>
-          <div id="app" class="card"></div>
-        </div>
-      </div>
-      <script type="module" src="/app/entry-client.ts"></script>
-    </main>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nitro Starter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="card">
+    <h1>This is your brand new Nitro project 🚀</h1>
+    <p>Get started by editing the <code>index.html</code> or <code>routes/api/index.ts</code></p>
+    <p>Learn more from 📖 <a href="https://v3.nitro.build/docs" target="_blank" rel="noopener noreferrer">Nitro Documentation</a></p>
+    <pre class="api"><code>{{{ serverFetch("/api") }}}</code></pre>
+  </main>
+</body>
 </html>
