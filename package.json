@@ -13,5 +13,8 @@
     "@types/node": "latest",
     "nitro": "latest",
     "typescript": "latest"
+  },
+  "dependencies": {
+    "undici": "^8.5.0"
   }
 }
